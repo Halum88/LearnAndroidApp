@@ -17,8 +17,7 @@
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:layout_constraintVertical_bias="0.563" />
+        app:layout_constraintTop_toBottomOf="@+id/calendarView" />
 
     <EditText
         android:id="@+id/editText"
@@ -27,12 +26,10 @@
         android:autofillHints="text"
         android:hint="Future Calculator"
         android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button"
@@ -52,16 +49,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.426" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:layout_width="398dp"
-        android:layout_height="28dp"
+        android:id="@+id/linearLayout"
+        android:layout_width="407dp"
+        android:layout_height="23dp"
         android:layout_marginBottom="48dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/calendarView"
-        tools:layout_editor_absoluteX="14dp">
+        tools:layout_editor_absoluteX="5dp">
 
         <Switch
             android:id="@+id/switch1"
@@ -87,5 +84,14 @@
             android:text="Ползунок 3"
             tools:ignore="UseSwitchCompatOrMaterialXml" />
     </LinearLayout>
+
+    <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
