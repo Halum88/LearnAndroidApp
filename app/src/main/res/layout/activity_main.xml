@@ -8,21 +8,10 @@
     tools:context=".MainActivity">
 
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="180dp"
-        android:layout_height="40dp"
-        android:text="Text......txeT"
-        android:textSize="32sp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView" />
-
     <EditText
         android:id="@+id/editText"
-        android:layout_width="411dp"
-        android:layout_height="38dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:autofillHints="text"
         android:hint="Future Calculator"
         android:inputType="text"
@@ -31,40 +20,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="203dp"
-        android:layout_height="76dp"
-        android:layout_marginTop="412dp"
-        android:text="Большая кнопка"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/calendarView" />
-
-    <CalendarView
-        android:id="@+id/calendarView"
-        android:layout_width="268dp"
-        android:layout_height="293dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="407dp"
-        android:layout_height="23dp"
-        android:layout_marginBottom="48dp"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginBottom="44dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/calendarView"
-        tools:layout_editor_absoluteX="5dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <Switch
             android:id="@+id/switch1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0"
+            android:layout_weight="1"
             android:text="Ползунок 1"
             tools:ignore="UseSwitchCompatOrMaterialXml" />
 
@@ -72,7 +43,7 @@
             android:id="@+id/switch2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.1"
+            android:layout_weight="1"
             android:text="Ползунок 2"
             tools:ignore="UseSwitchCompatOrMaterialXml" />
 
@@ -80,10 +51,44 @@
             android:id="@+id/switch3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.2"
+            android:layout_weight="1"
             android:text="Ползунок 3"
             tools:ignore="UseSwitchCompatOrMaterialXml" />
     </LinearLayout>
+
+
+    <CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Text......txeT"
+        android:textSize="32sp"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calendarView" />
+
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="412dp"
+        android:text="Большая кнопка"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/calendarView" />
+
 
     <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
