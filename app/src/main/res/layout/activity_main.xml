@@ -8,38 +8,40 @@
     tools:context=".MainActivity">
 
 
-
-
     <TextView
+        android:id="@+id/textView2"
         android:layout_width="180dp"
         android:layout_height="40dp"
-        android:text="Текст здесь"
+        android:text="Text......txeT"
         android:textSize="32sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5" />
+        app:layout_constraintVertical_bias="0.689" />
 
     <EditText
         android:id="@+id/editText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Будет калькулятор"
+        android:layout_width="411dp"
+        android:layout_height="38dp"
+        android:autofillHints="text"
+        android:hint="Future Calculator"
         android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="10dp" />
-
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="203dp"
         android:layout_height="76dp"
-        android:layout_marginTop="500dp"
+        android:layout_marginTop="624dp"
         android:text="Большая кнопка"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -48,14 +50,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Ползунок"
-        tools:layout_editor_absoluteX="280dp"
-        tools:layout_editor_absoluteY="75dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.905"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.112"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     <CalendarView
         android:id="@+id/calendarView"
-        android:layout_width="180dp"
-        android:layout_height="190dp"
-        tools:layout_editor_absoluteX="115dp"
-        tools:layout_editor_absoluteY="147dp" />
+        android:layout_width="268dp"
+        android:layout_height="293dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.339" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
