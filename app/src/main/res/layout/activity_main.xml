@@ -1,103 +1,159 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:id="@+id/main"
+    android:orientation="vertical"
+    >
 
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:autofillHints="text"
-        android:hint="Future Calculator"
-        android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
 
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_marginBottom="44dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/calendarView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <Switch
-            android:id="@+id/switch1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Ползунок 1"
-            tools:ignore="UseSwitchCompatOrMaterialXml" />
-
-        <Switch
-            android:id="@+id/switch2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Ползунок 2"
-            tools:ignore="UseSwitchCompatOrMaterialXml" />
-
-        <Switch
-            android:id="@+id/switch3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:text="Ползунок 3"
-            tools:ignore="UseSwitchCompatOrMaterialXml" />
-    </LinearLayout>
-
-
-    <CalendarView
-        android:id="@+id/calendarView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
+<!--text time value-->
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
+        android:id="@+id/result"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Text......txeT"
-        android:textSize="32sp"
-        android:gravity="center"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView" />
+        android:text="@string/string_0"
+        android:textSize="@dimen/button_size_text"
+        android:gravity="end"
+        />
 
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
+
+    <TableLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="412dp"
-        android:text="Большая кнопка"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/calendarView" />
+        >
+
+        <TableRow>
+            <Button
+                android:text="@string/string_AC"
+                android:layout_weight="1"
+                android:textSize="@dimen/button_size_text"
+                android:backgroundTint="#808080"/>
+
+            <Button
+                android:text="@string/string_plusandminus"
+                android:layout_weight="1"
+                android:textSize="@dimen/button_size_text"
+                android:backgroundTint="#808080"/>
+            <Button
+                android:text="@string/string_procent"
+                android:layout_weight="1"
+                android:textSize="@dimen/button_size_text"
+                android:backgroundTint="#808080"/>
+            <Button
+                android:text="@string/string_division"
+                android:layout_weight="1"
+                android:textSize="@dimen/button_size_text"
+                android:backgroundTint="#DAA520"/>
+        </TableRow>
+
+        <TableRow>
+            <Button
+                android:text="@string/string_7"
+                android:layout_weight="1"
+                android:textSize="@dimen/button_size_text"
+                android:backgroundTint="#000000"/>
+            <Button
+                android:text="@string/string_8"
+                android:layout_weight="1"
+                android:textSize="@dimen/button_size_text"
+                android:backgroundTint="#000000"/>
+            <Button
+                android:text="@string/string_9"
+                android:layout_weight="1"
+                android:textSize="@dimen/button_size_text"
+                android:backgroundTint="#000000"/>
+            <Button
+                android:text="@string/string_X"
+                android:layout_weight="1"
+                android:textSize="@dimen/button_size_text"
+                android:backgroundTint="#DAA520"/>
+        </TableRow>
+
+        <TableRow>
+            <Button
+                android:text="@string/string_4"
+                android:layout_weight="1"
+                android:textSize="@dimen/button_size_text"
+                android:backgroundTint="#000000"/>
+            <Button
+                android:text="@string/string_5"
+                android:layout_weight="1"
+                android:textSize="@dimen/button_size_text"
+                android:backgroundTint="#000000"/>
+            <Button
+                android:text="@string/string_6"
+                android:layout_weight="1"
+                android:textSize="@dimen/button_size_text"
+                android:backgroundTint="#000000"/>
+            <Button
+                android:text="@string/string_minus"
+                android:layout_weight="1"
+                android:textSize="@dimen/button_size_text"
+                android:backgroundTint="#DAA520"/>
+        </TableRow>
+
+        <TableRow>
+            <Button
+                android:text="@string/string_1"
+                android:layout_weight="1"
+                android:textSize="@dimen/button_size_text"
+                android:backgroundTint="#000000"/>
+            <Button
+                android:text="@string/string_2"
+                android:layout_weight="1"
+                android:textSize="@dimen/button_size_text"
+                android:backgroundTint="#000000"/>
+            <Button
+                android:text="@string/string_3"
+                android:layout_weight="1"
+                android:textSize="@dimen/button_size_text"
+                android:backgroundTint="#000000"/>
+            <Button
+                android:text="@string/string_plus"
+                android:layout_weight="1"
+                android:textSize="@dimen/button_size_text"
+                android:backgroundTint="#DAA520"/>
+        </TableRow>
+
+        <TableRow>
+            <Button
+                android:text="@string/string_0"
+                android:layout_weight="1"
+                android:textSize="@dimen/button_size_text"
+                android:backgroundTint="#000000"/>
+            <Button
+                android:text="@string/string_dot"
+                android:layout_weight="1"
+                android:textSize="@dimen/button_size_text"
+                android:backgroundTint="#000000"/>
+            <Button
+                android:text="@string/string_00"
+                android:layout_weight="1"
+                android:textSize="@dimen/button_size_text"
+                android:backgroundTint="#000000"/>
+            <Button
+                android:text="@string/string_equal"
+                android:layout_weight="1"
+                android:textSize="@dimen/button_size_text"
+                android:backgroundTint="#DAA520"/>
+        </TableRow>
+
+    </TableLayout>
 
 
-    <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/picture"
+        />
 
-    <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
 
-    <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
