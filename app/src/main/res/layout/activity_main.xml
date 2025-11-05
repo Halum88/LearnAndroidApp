@@ -124,6 +124,7 @@
 
         <TableRow>
             <Button
+                android:id="@+id/button_zero"
                 android:text="@string/string_0"
                 android:layout_weight="1"
                 android:textSize="@dimen/button_size_text"
