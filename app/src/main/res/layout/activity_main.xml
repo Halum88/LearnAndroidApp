@@ -23,7 +23,6 @@
         />
 
 
-
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -31,22 +30,26 @@
 
         <TableRow>
             <Button
+                android:id="@+id/btnAC"
                 android:text="@string/string_AC"
                 android:layout_weight="1"
                 android:textSize="@dimen/button_size_text"
                 android:backgroundTint="#808080"/>
 
             <Button
-                android:text="@string/string_plusandminus"
+                android:id="@+id/btnC"
+                android:text="@string/string_C"
                 android:layout_weight="1"
                 android:textSize="@dimen/button_size_text"
                 android:backgroundTint="#808080"/>
             <Button
-                android:text="@string/string_procent"
+                android:id="@+id/btnPercentage"
+                android:text="@string/string_Percentage"
                 android:layout_weight="1"
                 android:textSize="@dimen/button_size_text"
                 android:backgroundTint="#808080"/>
             <Button
+                android:id="@+id/btnDel"
                 android:text="@string/string_division"
                 android:layout_weight="1"
                 android:textSize="@dimen/button_size_text"
@@ -55,21 +58,25 @@
 
         <TableRow>
             <Button
+                android:id="@+id/btn7"
                 android:text="@string/string_7"
                 android:layout_weight="1"
                 android:textSize="@dimen/button_size_text"
                 android:backgroundTint="#000000"/>
             <Button
+                android:id="@+id/btn8"
                 android:text="@string/string_8"
                 android:layout_weight="1"
                 android:textSize="@dimen/button_size_text"
                 android:backgroundTint="#000000"/>
             <Button
+                android:id="@+id/btn9"
                 android:text="@string/string_9"
                 android:layout_weight="1"
                 android:textSize="@dimen/button_size_text"
                 android:backgroundTint="#000000"/>
             <Button
+                android:id="@+id/btnX"
                 android:text="@string/string_X"
                 android:layout_weight="1"
                 android:textSize="@dimen/button_size_text"
@@ -78,21 +85,25 @@
 
         <TableRow>
             <Button
+                android:id="@+id/btn4"
                 android:text="@string/string_4"
                 android:layout_weight="1"
                 android:textSize="@dimen/button_size_text"
                 android:backgroundTint="#000000"/>
             <Button
+                android:id="@+id/btn5"
                 android:text="@string/string_5"
                 android:layout_weight="1"
                 android:textSize="@dimen/button_size_text"
                 android:backgroundTint="#000000"/>
             <Button
+                android:id="@+id/btn6"
                 android:text="@string/string_6"
                 android:layout_weight="1"
                 android:textSize="@dimen/button_size_text"
                 android:backgroundTint="#000000"/>
             <Button
+                android:id="@+id/btnMinus"
                 android:text="@string/string_minus"
                 android:layout_weight="1"
                 android:textSize="@dimen/button_size_text"
@@ -101,21 +112,25 @@
 
         <TableRow>
             <Button
+                android:id="@+id/btn1"
                 android:text="@string/string_1"
                 android:layout_weight="1"
                 android:textSize="@dimen/button_size_text"
                 android:backgroundTint="#000000"/>
             <Button
+                android:id="@+id/btn2"
                 android:text="@string/string_2"
                 android:layout_weight="1"
                 android:textSize="@dimen/button_size_text"
                 android:backgroundTint="#000000"/>
             <Button
+                android:id="@+id/btn3"
                 android:text="@string/string_3"
                 android:layout_weight="1"
                 android:textSize="@dimen/button_size_text"
                 android:backgroundTint="#000000"/>
             <Button
+                android:id="@+id/btnPlus"
                 android:text="@string/string_plus"
                 android:layout_weight="1"
                 android:textSize="@dimen/button_size_text"
@@ -124,22 +139,25 @@
 
         <TableRow>
             <Button
-                android:id="@+id/button_zero"
+                android:id="@+id/btn0"
                 android:text="@string/string_0"
                 android:layout_weight="1"
                 android:textSize="@dimen/button_size_text"
                 android:backgroundTint="#000000"/>
             <Button
+                android:id="@+id/btnDot"
                 android:text="@string/string_dot"
                 android:layout_weight="1"
                 android:textSize="@dimen/button_size_text"
                 android:backgroundTint="#000000"/>
             <Button
+                android:id="@+id/btnDuoZero"
                 android:text="@string/string_00"
                 android:layout_weight="1"
                 android:textSize="@dimen/button_size_text"
                 android:backgroundTint="#000000"/>
             <Button
+                android:id="@+id/btnEqual"
                 android:text="@string/string_equal"
                 android:layout_weight="1"
                 android:textSize="@dimen/button_size_text"
