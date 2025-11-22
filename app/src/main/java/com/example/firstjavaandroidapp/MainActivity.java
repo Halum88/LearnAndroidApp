@@ -6,6 +6,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -21,6 +22,11 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
         result = findViewById(R.id.result);
+
+        if (savedInstanceState != null) {
+            String savedText = savedInstanceState.getString("result_text");
+            result.setText(savedText);
+        }
 
         int[] numberButtons = {
                 R.id.btn0, R.id.btn1, R.id.btn2, R.id.btn3, R.id.btn4,
@@ -75,6 +81,13 @@ public class MainActivity extends AppCompatActivity {
                 result.setText("0");
             }
         });
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        outState.putString("result_text", result.getText().toString());
     }
 
 }
