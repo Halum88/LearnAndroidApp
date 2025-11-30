@@ -1,222 +1,230 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/main"
-    android:orientation="horizontal"
-    >
+    android:layout_height="match_parent">
 
 
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1">
 
-    </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
 
-
-    <TableLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:stretchColumns="*">
+        </LinearLayout>
 
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:src="@drawable/picture"
-            android:scaleType="fitCenter"
-            android:adjustViewBounds="true"
-            android:contentDescription="@string/todo"/>
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:stretchColumns="*">
 
-        <TextView
-            android:id="@+id/result"
-            style="@style/CalculatorScreenText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="end"
-            android:text="@string/string_0"
-            android:textSize="@dimen/button_size_text" />
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:titleTextColor="@android:color/black"
+                app:menu="@menu/drawer_menu"
+                app:titleCentered="true" />
 
-        <TableRow>
 
-            <Button
-                android:id="@+id/btnAC"
-                style="@style/ButtonScreenText"
-                android:layout_weight="1"
-                android:backgroundTint="#808080"
-                android:text="@string/string_AC"
-                android:textSize="@dimen/button_size_text" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:src="@drawable/picture"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/todo"/>
 
-            <Button
-                android:id="@+id/btnC"
-                style="@style/ButtonScreenText"
-                android:layout_weight="1"
-                android:backgroundTint="#808080"
-                android:text="@string/string_C"
-                android:textSize="@dimen/button_size_text" />
-
-            <Button
-                android:id="@+id/btnPercentage"
-                style="@style/ButtonScreenText"
-                android:layout_weight="1"
-                android:backgroundTint="#808080"
-                android:text="@string/string_Percentage"
-                android:textSize="@dimen/button_size_text" />
-
-            <Button
-                android:id="@+id/btnDel"
-                style="@style/ButtonScreenText"
-                android:layout_weight="1"
-                android:backgroundTint="#DAA520"
-                android:text="@string/string_division"
-                android:textSize="@dimen/button_size_text" />
-        </TableRow>
-
-        <TableRow>
-
-            <Button
-                android:id="@+id/btn7"
+            <TextView
+                android:id="@+id/result"
                 style="@style/CalculatorScreenText"
-                android:layout_weight="1"
-                android:backgroundTint="#000000"
-                android:text="@string/string_7"
-                android:textSize="@dimen/button_size_text" />
-
-            <Button
-                android:id="@+id/btn8"
-                style="@style/CalculatorScreenText"
-                android:layout_weight="1"
-                android:backgroundTint="#000000"
-                android:text="@string/string_8"
-                android:textSize="@dimen/button_size_text" />
-
-            <Button
-                android:id="@+id/btn9"
-                style="@style/CalculatorScreenText"
-                android:layout_weight="1"
-                android:backgroundTint="#000000"
-                android:text="@string/string_9"
-                android:textSize="@dimen/button_size_text" />
-
-            <Button
-                android:id="@+id/btnX"
-                style="@style/ButtonScreenText"
-                android:layout_weight="1"
-                android:backgroundTint="#DAA520"
-                android:text="@string/string_X"
-                android:textSize="@dimen/button_size_text" />
-        </TableRow>
-
-        <TableRow>
-
-            <Button
-                android:id="@+id/btn4"
-                style="@style/CalculatorScreenText"
-                android:layout_weight="1"
-                android:backgroundTint="#000000"
-                android:text="@string/string_4"
-                android:textSize="@dimen/button_size_text" />
-
-            <Button
-                android:id="@+id/btn5"
-                style="@style/CalculatorScreenText"
-                android:layout_weight="1"
-                android:backgroundTint="#000000"
-                android:text="@string/string_5"
-                android:textSize="@dimen/button_size_text" />
-
-            <Button
-                android:id="@+id/btn6"
-                style="@style/CalculatorScreenText"
-                android:layout_weight="1"
-                android:backgroundTint="#000000"
-                android:text="@string/string_6"
-                android:textSize="@dimen/button_size_text" />
-
-            <Button
-                android:id="@+id/btnMinus"
-                style="@style/ButtonScreenText"
-                android:layout_weight="1"
-                android:backgroundTint="#DAA520"
-                android:text="@string/string_minus"
-                android:textSize="@dimen/button_size_text" />
-        </TableRow>
-
-        <TableRow>
-
-            <Button
-                android:id="@+id/btn1"
-                style="@style/CalculatorScreenText"
-                android:layout_weight="1"
-                android:backgroundTint="#000000"
-                android:text="@string/string_1"
-                android:textSize="@dimen/button_size_text" />
-
-            <Button
-                android:id="@+id/btn2"
-                style="@style/CalculatorScreenText"
-                android:layout_weight="1"
-                android:backgroundTint="#000000"
-                android:text="@string/string_2"
-                android:textSize="@dimen/button_size_text" />
-
-            <Button
-                android:id="@+id/btn3"
-                style="@style/CalculatorScreenText"
-                android:layout_weight="1"
-                android:backgroundTint="#000000"
-                android:text="@string/string_3"
-                android:textSize="@dimen/button_size_text" />
-
-            <Button
-                android:id="@+id/btnPlus"
-                style="@style/ButtonScreenText"
-                android:layout_weight="1"
-                android:backgroundTint="#DAA520"
-                android:text="@string/string_plus"
-                android:textSize="@dimen/button_size_text" />
-        </TableRow>
-
-        <TableRow>
-
-            <Button
-                android:id="@+id/btn0"
-                style="@style/CalculatorScreenText"
-                android:layout_weight="1"
-                android:backgroundTint="#000000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
                 android:text="@string/string_0"
                 android:textSize="@dimen/button_size_text" />
 
-            <Button
-                android:id="@+id/btnDot"
-                style="@style/CalculatorScreenText"
-                android:layout_weight="1"
-                android:backgroundTint="#000000"
-                android:text="@string/string_dot"
-                android:textSize="@dimen/button_size_text" />
+            <TableRow>
 
-            <Button
-                android:id="@+id/btnDuoZero"
-                style="@style/CalculatorScreenText"
-                android:layout_weight="1"
-                android:backgroundTint="#000000"
-                android:text="@string/string_00"
-                android:textSize="@dimen/button_size_text" />
+                <Button
+                    android:id="@+id/btnAC"
+                    style="@style/ButtonScreenText"
+                    android:layout_weight="1"
+                    android:backgroundTint="#808080"
+                    android:text="@string/string_AC"
+                    android:textSize="@dimen/button_size_text" />
 
-            <Button
-                android:id="@+id/btnEqual"
-                style="@style/ButtonScreenText"
-                android:layout_weight="1"
-                android:backgroundTint="#DAA520"
-                android:text="@string/string_equal"
-                android:textSize="@dimen/button_size_text" />
-        </TableRow>
+                <Button
+                    android:id="@+id/btnC"
+                    style="@style/ButtonScreenText"
+                    android:layout_weight="1"
+                    android:backgroundTint="#808080"
+                    android:text="@string/string_C"
+                    android:textSize="@dimen/button_size_text" />
+
+                <Button
+                    android:id="@+id/btnPercentage"
+                    style="@style/ButtonScreenText"
+                    android:layout_weight="1"
+                    android:backgroundTint="#808080"
+                    android:text="@string/string_Percentage"
+                    android:textSize="@dimen/button_size_text" />
+
+                <Button
+                    android:id="@+id/btnDel"
+                    style="@style/ButtonScreenText"
+                    android:layout_weight="1"
+                    android:backgroundTint="#DAA520"
+                    android:text="@string/string_division"
+                    android:textSize="@dimen/button_size_text" />
+            </TableRow>
+
+            <TableRow>
+
+                <Button
+                    android:id="@+id/btn7"
+                    style="@style/CalculatorScreenText"
+                    android:layout_weight="1"
+                    android:backgroundTint="#000000"
+                    android:text="@string/string_7"
+                    android:textSize="@dimen/button_size_text" />
+
+                <Button
+                    android:id="@+id/btn8"
+                    style="@style/CalculatorScreenText"
+                    android:layout_weight="1"
+                    android:backgroundTint="#000000"
+                    android:text="@string/string_8"
+                    android:textSize="@dimen/button_size_text" />
+
+                <Button
+                    android:id="@+id/btn9"
+                    style="@style/CalculatorScreenText"
+                    android:layout_weight="1"
+                    android:backgroundTint="#000000"
+                    android:text="@string/string_9"
+                    android:textSize="@dimen/button_size_text" />
+
+                <Button
+                    android:id="@+id/btnX"
+                    style="@style/ButtonScreenText"
+                    android:layout_weight="1"
+                    android:backgroundTint="#DAA520"
+                    android:text="@string/string_X"
+                    android:textSize="@dimen/button_size_text" />
+            </TableRow>
+
+            <TableRow>
+
+                <Button
+                    android:id="@+id/btn4"
+                    style="@style/CalculatorScreenText"
+                    android:layout_weight="1"
+                    android:backgroundTint="#000000"
+                    android:text="@string/string_4"
+                    android:textSize="@dimen/button_size_text" />
+
+                <Button
+                    android:id="@+id/btn5"
+                    style="@style/CalculatorScreenText"
+                    android:layout_weight="1"
+                    android:backgroundTint="#000000"
+                    android:text="@string/string_5"
+                    android:textSize="@dimen/button_size_text" />
+
+                <Button
+                    android:id="@+id/btn6"
+                    style="@style/CalculatorScreenText"
+                    android:layout_weight="1"
+                    android:backgroundTint="#000000"
+                    android:text="@string/string_6"
+                    android:textSize="@dimen/button_size_text" />
+
+                <Button
+                    android:id="@+id/btnMinus"
+                    style="@style/ButtonScreenText"
+                    android:layout_weight="1"
+                    android:backgroundTint="#DAA520"
+                    android:text="@string/string_minus"
+                    android:textSize="@dimen/button_size_text" />
+            </TableRow>
+
+            <TableRow>
+
+                <Button
+                    android:id="@+id/btn1"
+                    style="@style/CalculatorScreenText"
+                    android:layout_weight="1"
+                    android:backgroundTint="#000000"
+                    android:text="@string/string_1"
+                    android:textSize="@dimen/button_size_text" />
+
+                <Button
+                    android:id="@+id/btn2"
+                    style="@style/CalculatorScreenText"
+                    android:layout_weight="1"
+                    android:backgroundTint="#000000"
+                    android:text="@string/string_2"
+                    android:textSize="@dimen/button_size_text" />
+
+                <Button
+                    android:id="@+id/btn3"
+                    style="@style/CalculatorScreenText"
+                    android:layout_weight="1"
+                    android:backgroundTint="#000000"
+                    android:text="@string/string_3"
+                    android:textSize="@dimen/button_size_text" />
+
+                <Button
+                    android:id="@+id/btnPlus"
+                    style="@style/ButtonScreenText"
+                    android:layout_weight="1"
+                    android:backgroundTint="#DAA520"
+                    android:text="@string/string_plus"
+                    android:textSize="@dimen/button_size_text" />
+            </TableRow>
+
+            <TableRow>
+
+                <Button
+                    android:id="@+id/btn0"
+                    style="@style/CalculatorScreenText"
+                    android:layout_weight="1"
+                    android:backgroundTint="#000000"
+                    android:text="@string/string_0"
+                    android:textSize="@dimen/button_size_text" />
+
+                <Button
+                    android:id="@+id/btnDot"
+                    style="@style/CalculatorScreenText"
+                    android:layout_weight="1"
+                    android:backgroundTint="#000000"
+                    android:text="@string/string_dot"
+                    android:textSize="@dimen/button_size_text" />
+
+                <Button
+                    android:id="@+id/btnDuoZero"
+                    style="@style/CalculatorScreenText"
+                    android:layout_weight="1"
+                    android:backgroundTint="#000000"
+                    android:text="@string/string_00"
+                    android:textSize="@dimen/button_size_text" />
+
+                <Button
+                    android:id="@+id/btnEqual"
+                    style="@style/ButtonScreenText"
+                    android:layout_weight="1"
+                    android:backgroundTint="#DAA520"
+                    android:text="@string/string_equal"
+                    android:textSize="@dimen/button_size_text" />
+            </TableRow>
 
 
-    </TableLayout>
+        </TableLayout>
 
-</LinearLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

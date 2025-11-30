@@ -1,23 +1,29 @@
 package com.example.firstjavaandroidapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.example.firstjavaandroidapp.databinding.ActivityMainBinding;
+import com.google.android.material.navigation.NavigationView;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView result;
+    private ActivityMainBinding binding;
     private StringBuilder currentExpression = new StringBuilder();
     private StringBuilder currentNumber = new StringBuilder();
     private boolean lastInputIsOperator = false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,25 +31,35 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        result = findViewById(R.id.result);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
+
+        binding.toolbar.setOnMenuItemClickListener(item -> {
+            if (item.getItemId() == R.id.nav_about) {
+                startActivity(new Intent(MainActivity.this, AboutAPP.class));
+                return true;
+            }
+            return false;
+        });
+
 
         if (savedInstanceState != null) {
             String savedText = savedInstanceState.getString("result_text");
             currentExpression.append(savedText);
-            result.setText(savedText);
+            binding.result.setText(savedText);
         }
 
-        int[] numberButtons = {
-                R.id.btn0, R.id.btn1, R.id.btn2, R.id.btn3, R.id.btn4,
-                R.id.btn5, R.id.btn6, R.id.btn7, R.id.btn8, R.id.btn9,
-                R.id.btnDuoZero
+        Button[] numberButtons = new Button[]{
+                binding.btn0, binding.btn1, binding.btn2, binding.btn3, binding.btn4,
+                binding.btn5, binding.btn6, binding.btn7, binding.btn8, binding.btn9,
+                binding.btnDuoZero
         };
 
 
-        for (int id : numberButtons) {
-            findViewById(id).setOnClickListener(v -> {
-                Button b = (Button) v;
-                String input = b.getText().toString();
+        for (Button btn : numberButtons) {
+            btn.setOnClickListener(v -> {
+                String input = btn.getText().toString();
 
                 if (input.equals("00")) {
                     if (currentNumber.length() == 0) {
@@ -61,14 +77,13 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-        int[] opButtons = {
-                R.id.btnPlus, R.id.btnMinus, R.id.btnX, R.id.btnDel, R.id.btnPercentage
+        Button[] opButtons = new Button[]{
+                binding.btnPlus, binding.btnMinus, binding.btnX, binding.btnDel, binding.btnPercentage
         };
 
-        for (int id : opButtons) {
-            findViewById(id).setOnClickListener(v -> {
-                Button b = (Button) v;
-                String op = b.getText().toString();
+        for (Button btn : opButtons) {
+            btn.setOnClickListener(v -> {
+                String op = btn.getText().toString();
 
                 if (op.equals("x")) op = "*";
                 if (op.equals("÷")) op = "/";
@@ -88,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-        findViewById(R.id.btnDot).setOnClickListener(v -> {
+        binding.btnDot.setOnClickListener(v -> {
             if (!currentNumber.toString().contains(".")) {
                 if (currentNumber.length() == 0) currentNumber.append("0");
                 currentNumber.append(".");
@@ -97,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        findViewById(R.id.btnPercentage).setOnClickListener(v -> {
+        binding.btnPercentage.setOnClickListener(v -> {
             if (currentNumber.length() > 0 && currentExpression.length() > 0) {
                 String expr = currentExpression.toString().trim();
                 String[] tokens = expr.split(" ");
@@ -117,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        findViewById(R.id.btnAC).setOnClickListener(v -> {
+        binding.btnAC.setOnClickListener(v -> {
             currentExpression.setLength(0);
             currentNumber.setLength(0);
             lastInputIsOperator = false;
@@ -125,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        findViewById(R.id.btnC).setOnClickListener(v -> {
+        binding.btnC.setOnClickListener(v -> {
             if (currentNumber.length() > 0) {
                 currentNumber.setLength(currentNumber.length() - 1);
             } else if (currentExpression.length() > 0) {
@@ -135,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        findViewById(R.id.btnEqual).setOnClickListener(v -> {
+        binding.btnEqual.setOnClickListener(v -> {
             if (currentNumber.length() > 0) {
                 currentExpression.append(currentNumber.toString());
                 currentNumber.setLength(0);
@@ -149,11 +164,11 @@ public class MainActivity extends AppCompatActivity {
             if (res == (long) res) {
                 currentExpression.setLength(0);
                 currentExpression.append((long) res);
-                result.setText(String.valueOf((long) res));
+                binding.result.setText(String.valueOf((long) res));
             } else {
                 currentExpression.setLength(0);
                 currentExpression.append(res);
-                result.setText(String.valueOf(res));
+                binding.result.setText(String.valueOf(res));
             }
 
             lastInputIsOperator = false;
@@ -161,7 +176,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void updateDisplay() {
-        result.setText(currentExpression.toString() + currentNumber.toString());
+        binding.result.setText(currentExpression.toString() + currentNumber.toString());
     }
 
     private double evaluate(String expr) {
@@ -191,6 +206,7 @@ public class MainActivity extends AppCompatActivity {
 
         return result;
     }
+
 
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
