@@ -12,6 +12,8 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.firstjavaandroidapp.databinding.ActivityMainBinding;
 import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.snackbar.Snackbar;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -137,6 +139,8 @@ public class MainActivity extends AppCompatActivity {
             currentNumber.setLength(0);
             lastInputIsOperator = false;
             updateDisplay();
+
+            Snackbar.make(binding.getRoot(), "Display clear!", Snackbar.LENGTH_SHORT).show();
         });
 
 
@@ -159,19 +163,35 @@ public class MainActivity extends AppCompatActivity {
             String expr = currentExpression.toString();
             expr = expr.replace("x", "*").replace("÷", "/");
 
-            double res = evaluate(expr);
+            try {
+                double res = evaluate(expr);
 
-            if (res == (long) res) {
+                if (Double.isInfinite(res) || Double.isNaN(res)) {
+                    Snackbar.make(binding.getRoot(), "Error: division by 0!", Snackbar.LENGTH_SHORT).show();
+                    currentExpression.setLength(0);
+                    currentNumber.setLength(0);
+                    updateDisplay();
+                    return;
+                }
+
+                if (res == (long) res) {
+                    currentExpression.setLength(0);
+                    currentExpression.append((long) res);
+                    binding.result.setText(String.valueOf((long) res));
+                } else {
+                    currentExpression.setLength(0);
+                    currentExpression.append(res);
+                    binding.result.setText(String.valueOf(res));
+                }
+
+                lastInputIsOperator = false;
+
+            } catch (Exception e) {
+                Snackbar.make(binding.getRoot(), "Calculation error!", Snackbar.LENGTH_SHORT).show();
                 currentExpression.setLength(0);
-                currentExpression.append((long) res);
-                binding.result.setText(String.valueOf((long) res));
-            } else {
-                currentExpression.setLength(0);
-                currentExpression.append(res);
-                binding.result.setText(String.valueOf(res));
+                currentNumber.setLength(0);
+                updateDisplay();
             }
-
-            lastInputIsOperator = false;
         });
     }
 
